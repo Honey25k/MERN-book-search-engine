@@ -19,7 +19,7 @@ module.exports = {
       return res.status(400).json({ message: 'You have no token!' });
     }
 
-    // verify token and get user data out of it
+    // verify token and get user data from it
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
